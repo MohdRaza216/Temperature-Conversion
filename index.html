@@ -9,12 +9,13 @@
   <body>
     <h1>Temperature Conversion Program</h1>
     <p>
-      Enter a temperature value and select a unit to convert it to the other two
-      units.
+      Enter a temperature value and specify its unit. The converted values will
+      be shown for all other units.
     </p>
     <hr />
     <p>
-      <strong>Note:</strong> Kelvin cannot have negative values (minimum value is 0).
+      <strong>Note:</strong> Kelvin values cannot be negative (minimum value is
+      0).
     </p>
     <hr />
     <div id="form-layout">
@@ -27,7 +28,7 @@
           placeholder="Enter temperature"
           required
         />
-        <label for="unit">Select Unit:</label>
+        <label for="unit">Input Unit:</label>
         <select id="unit" name="unit" required>
           <option value="">Choose a unit</option>
           <option value="C">Celsius (°C)</option>
@@ -37,9 +38,9 @@
         <button type="submit">Convert</button>
         <button type="reset" id="reset-button">Reset</button>
       </form>
-      <div id="result" style="display: none;">
+      <div id="result" style="display: none">
         <h2>Converted Temperatures</h2>
-        <table>
+        <table style="margin-left: 12vh">
           <thead>
             <tr>
               <th>Unit</th>
@@ -63,6 +64,23 @@
         </table>
       </div>
       <div id="error-message"></div>
+    </div>
+
+    <div id="history" style="margin-top: 20px">
+      <h2>Conversion History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Input Unit</th>
+            <th>Celsius (°C)</th>
+            <th>Fahrenheit (°F)</th>
+            <th>Kelvin (K)</th>
+          </tr>
+        </thead>
+        <tbody id="history-table-body"></tbody>
+      </table>
+      <button id="clear-history">Clear History</button>
     </div>
     <script src="script.js"></script>
   </body>
