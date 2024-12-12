@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Conversion</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Temperature Conversion Program</h1>
+    <p>
+      Enter a temperature value and select a unit to convert it to the other two
+      units.
+    </p>
+    <hr />
+    <p>
+      <strong>Note:</strong> Kelvin cannot have negative values (minimum value is 0).
+    </p>
+    <hr />
+    <div id="form-layout">
+      <form id="temperature-form">
+        <label for="temperature">Temperature:</label>
+        <input
+          type="number"
+          id="temperature"
+          name="temperature"
+          placeholder="Enter temperature"
+          required
+        />
+        <label for="unit">Select Unit:</label>
+        <select id="unit" name="unit" required>
+          <option value="">Choose a unit</option>
+          <option value="C">Celsius (°C)</option>
+          <option value="F">Fahrenheit (°F)</option>
+          <option value="K">Kelvin (K)</option>
+        </select>
+        <button type="submit">Convert</button>
+        <button type="reset" id="reset-button">Reset</button>
+      </form>
+      <div id="result" style="display: none;">
+        <h2>Converted Temperatures</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Unit</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Celsius (°C)</td>
+              <td id="result-celsius"></td>
+            </tr>
+            <tr>
+              <td>Fahrenheit (°F)</td>
+              <td id="result-fahrenheit"></td>
+            </tr>
+            <tr>
+              <td>Kelvin (K)</td>
+              <td id="result-kelvin"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="error-message"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
